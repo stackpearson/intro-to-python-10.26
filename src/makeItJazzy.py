@@ -1,8 +1,16 @@
-def csWhereIsBob(names):
-    for name in names:
-        if name =="Bob":
-            return names.index(name)
-        else:
-            return -1
+def csMakeItJazzy(chords):
+    chordNum = '7'
+    newChordsList = []
+    testForSeven = ''.join(str(e) for e in chords)
+    res = testForSeven.find('7')
 
-print(csWhereIsBob(["Layla", "Bob", "Kaitlyn", "Bob", "Patricia"]))
+    if res >= 0:
+         return chords
+    else:
+        for chord in chords:
+            newChords = chord + str(chordNum)
+            newChordsList.append(newChords) 
+
+        return newChordsList
+
+print(csMakeItJazzy(["G", "F", "C"]))
