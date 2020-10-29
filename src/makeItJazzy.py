@@ -4,13 +4,22 @@ def csMakeItJazzy(chords):
     testForSeven = ''.join(str(e) for e in chords)
     res = testForSeven.find('7')
 
-    if res >= 0:
-         return chords
-    else:
-        for chord in chords:
-            newChords = chord + str(chordNum)
-            newChordsList.append(newChords) 
+    # if res >= 0:
+    #      return chords
+    # else:
+    #     for chord in chords:
+    #         newChords = chord + str(chordNum)
+    #         newChordsList.append(newChords) 
 
-        return newChordsList
+    #     return newChordsList
+
+    for chord in chords:
+        if chord.endswith('7'):
+            newChordsList.append(chord)
+        else:
+            newChords = chord + str(chordNum)
+            newChordsList.append(newChords)
+
+    return newChordsList
 
 print(csMakeItJazzy(["G", "F", "C"]))
